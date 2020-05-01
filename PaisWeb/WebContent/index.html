@@ -2,22 +2,46 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Pais</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><title>Pais</title>
 </head>
 <body>
-	<h3>País</h3>
-	<form action="ManterPais.do" method="post">
-		<label for="nome">nome:</label> 
-		<input type="text" id="nome" name="nome">
-		<br /> 
-		<label for="populacao">população:</label>
-		<input type="number" id="populacao" name="populacao">
-		<br />
-		<label for="area">área:</label>
-		<input type="number" id="area" name="area">
-		<br /> 
-		<br />
-		<input type="submit" value="Submit">
-	</form>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	    	<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraSistema" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+		  		<span class="navbar-toggler-icon"></span>
+		  	</button>
+			<div class="collapse navbar-collapse" id="barraSistema">
+		    	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		      		<li class="nav-item active">
+		        		<a class="nav-link" href="index.html">Home</a>
+		      		</li>
+		    	</ul>
+		    	<form class="form-inline my-2 my-lg-0">
+		      		<input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Procurar">
+		      		<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Procurar</button>
+		    	</form>
+		  	</div>
+		</nav>
+	</header>
+	<div>
+		<h3 class="text-center">País</h3>
+		<form action="ManterPais.do" method="post">
+			<div class="form-group">
+				<label for="nome" class="control-label">Nome:</label><br />
+				<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+			</div>
+			<div class="form-group">
+				<label for="populacao" class="control-label">População:</label><br />
+				<input type="number" class="form-control" id="populacao" name="populacao" placeholder="População">
+			</div>
+			<div class="form-group">
+				<label for="area" class="control-label">Área:</label><br />
+				<input type="number" class="form-control" id="area" name="area" placeholder="Área">
+			</div> 
+			<br />
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+	</div>
 </body>
 </html>
