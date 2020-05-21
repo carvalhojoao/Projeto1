@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Pais;
 
@@ -85,6 +86,54 @@ public class PaisDAO {
 			System.out.print(e1.getStackTrace());
 		}
 		return pais;
+	}
+	
+	public ArrayList<Pais> listarPaises() {
+		ArrayList<Pais> listaPais = new ArrayList<Pais>();
+		String sqlSelect = "SELECT id, nome, populacao, areaPais FROM Pais ";
+
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while(rs.next()){
+					Pais pais = new Pais();
+					pais.setId(rs.getInt("id"));
+					pais.setNome(rs.getString("nome"));
+					pais.setPopulacao(rs.getLong("populacao"));
+					pais.setArea(rs.getDouble("areaPais"));
+					listaPais.add(pais);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return listaPais;
+	}
+	
+	public ArrayList<Pais> listarPaises(String nomePais) {
+		ArrayList<Pais> listaPais = new ArrayList<Pais>();
+		String sqlSelect = "SELECT id, nome, populacao, areaPais FROM Pais WHERE nome = ?";
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setString(1, "%" + nomePais + "%");			
+			try (ResultSet rs = stm.executeQuery();) {
+				while(rs.next()){
+					Pais pais = new Pais();
+					pais.setId(rs.getInt("id"));
+					pais.setNome(rs.getString("nome"));
+					pais.setPopulacao(rs.getLong("populacao"));
+					pais.setArea(rs.getDouble("areaPais"));
+					listaPais.add(pais);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return listaPais;
 	}
 
 }

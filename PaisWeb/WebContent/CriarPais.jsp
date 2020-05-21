@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Pais Index</title>   
+	<title>Criar País</title>   
 	    
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>  
 	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet"/>
@@ -12,13 +11,6 @@
 </head>
 <body>
 	<c:import url="Menu.jsp" />
-	<div id="main"class="container">
-		<h3 class="page-header">Cadastros</h3>
-	</div>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	
-	
+
 </body>
 </html>
-
