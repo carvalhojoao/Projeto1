@@ -12,7 +12,7 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="ListarPaises.do?acao=reiniciar">Paises</a></li>
+				<li><a href="ListarPaises.do" name="command" value="Reiniciar"">Paises</a></li>
 				<li><a href="index.jsp">Pais</a></li>
 			</ul>
 		</div>

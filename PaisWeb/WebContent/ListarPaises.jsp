@@ -27,8 +27,7 @@
 				<div class="modal-footer">
 					<form action="ManterCliente.do" method="post">
 						<input type="hidden" name="id" id="id_excluir" />
-						<button type="submit" class="btn btnprimary" name="acao"
-							value="Excluir">Sim</button>
+						<button type="submit" class="btn btnprimary" name="command" value="ExcluirPais">Sim</button>
 						<button type="button" class="btn btndefault" data-dismiss="modal">Não</button>
 					</form>
 				</div>
@@ -46,7 +45,7 @@
 					<div class="input-group h5">
 						<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Paises (deixe vazio para trazer todos)">
 						<span class="input-group-btn">
-							<button class="btn btn-primary" type="submit" name="acao" value="buscar">
+							<button class="btn btn-primary" type="submit" name="command" value="Buscar">
 								<i class="fas fa-search"></i>
 							</button>
 						</span>
@@ -78,8 +77,10 @@
 									<td>${pais.nome }</td>
 									<td>${pais.populacao }</td>
 									<td>${pais.area }</td>
-									<td class="actions"><a class="btn btn-success btn-xs" href="ManterPais.do?acao=Visualizar&id=${pais.id}">Visualizar</a>
-									<a class="btn btn-warning btn-xs" href="ManterPais.do?acao=Editar&id=${pais.id }">Editar</a> <button id="btn${cliente.id}%>"type="button"class="btn btn-danger btn-xs"data-toggle="modal" datatarget="#delete-modal"data-cliente="${cliente.id }">Excluir</button>
+									<td class="actions">
+										<a class="btn btn-success btn-xs" href="ManterPais.do?acao=Visualizar&id=${pais.id}">Visualizar</a>
+										<a class="btn btn-warning btn-xs" href="ManterPais.do?acao=Editar&id=${pais.id }">Editar</a> 
+										<button id="btn${cliente.id}%>"type="button"class="btn btn-danger btn-xs"data-toggle="modal" datatarget="#delete-modal"data-cliente="${cliente.id }">Excluir</button>
 									</td>
 								</tr>
 							</c:forEach>

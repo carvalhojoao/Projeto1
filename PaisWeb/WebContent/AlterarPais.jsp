@@ -14,28 +14,28 @@
 	<div id="main"class="container">
 		<h3 class="page-header">País</h3>
 		<form action="ManterPais.do" method="post">
-			<input type="hidden" class="form-control" id="id" name="id">
+			<input type="hidden" class="form-control" id="id" name="id" value="${pais.id }">
 			<div class="row">
 				<div class="form-group col-md-12">
 					<label for="nome" class="control-label">Nome:</label>
-					<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+					<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="${pais.nome }">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-6">
 					<label for="populacao" class="control-label">População:</label>
-					<input type="number" class="form-control" id="populacao" name="populacao" placeholder="População">
+					<input type="number" class="form-control" id="populacao" name="populacao" placeholder="População" value="${pais.populacao }">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="area" class="control-label">Área:</label>
-					<input type="number" class="form-control" id="area" name="area" placeholder="Área">
+					<input type="number" class="form-control" id="area" name="area" placeholder="Área" value="${pais.area }">
 				</div> 
 			</div>
 			<hr/>
 			<div id="actions"class="row">
 				<div class="col-md-12">
-					<button type="submit"class="btn btn-primary" name="acao" value="Criar">Salvar</button>
-					<a href="index.html"class="btn btn-danger">Cancelar</a>
+					<button type="submit"class="btn btn-primary" name="command" value="AlterarPais">Salvar</button>
+					<a href="ListarPaises.do?acao=reiniciar"class="btn btn-danger">Cancelar</a>
 				</div>
 			</div>
 		</form>

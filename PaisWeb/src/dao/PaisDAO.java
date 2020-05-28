@@ -63,7 +63,7 @@ public class PaisDAO {
 	public Pais carregar(int id) {
 		Pais pais = new Pais();
 		pais.setId(id);
-		String sqlSelect = "SELECT nome, populacao, areaPais FROM Pais WHERE Pais.id = ?";
+		String sqlSelect = "SELECT id, nome, populacao, areaPais FROM Pais WHERE Pais.id = ?";
 
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {

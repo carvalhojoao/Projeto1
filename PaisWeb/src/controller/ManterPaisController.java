@@ -47,10 +47,10 @@ public class ManterPaisController extends HttpServlet {
 		Pais pais = new Pais();
 		pais.setId(id);
 		pais.setNome(pNome);
-		if (!pPopulacao.equals("")) {
+		if (pPopulacao != null && !pPopulacao.equals("")) {
 			pais.setPopulacao(Long.parseLong(pPopulacao));
 		}
-		if (!pArea.equals("")) {
+		if (pArea != null && !pArea.equals("")) {
 			pais.setArea(Double.parseDouble(pArea));
 		}
 
